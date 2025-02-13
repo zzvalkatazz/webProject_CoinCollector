@@ -1,0 +1,47 @@
+
+CREATE DATABASE IF NOT EXISTS `Users` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+USE `Users`;
+
+-- Създаване на таблицата users
+CREATE TABLE `users` ( 
+    `id` INT AUTO_INCREMENT PRIMARY KEY, 
+    `Username` VARCHAR(20) NOT NULL UNIQUE, 
+    `Email` VARCHAR(200) NOT NULL UNIQUE, 
+    `Password` VARCHAR(200) NOT NULL 
+) ENGINE = InnoDB;
+
+
+CREATE TABLE `collections` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `name` VARCHAR(100) NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE `coins` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `collection_id` INT NOT NULL,  
+    `user_id` INT NOT NULL,  
+    `name` VARCHAR(100) NOT NULL,
+    `year` INT NOT NULL,
+    `value` DECIMAL(10,2) NOT NULL,
+    `country` VARCHAR(100) NOT NULL,
+    `continent` ENUM('Европа', 'Азия', 'Африка', 'Северна Америка', 'Южна Америка', 'Австралия') NOT NULL,
+    `front_image` VARCHAR(255) NOT NULL, 
+    `back_image` VARCHAR(255) NOT NULL,  
+    FOREIGN KEY (`collection_id`) REFERENCES `collections`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`user_id`) REFERENCES `Users`.`users`(`id`) ON DELETE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE likes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    coin_id INT NOT NULL,
+    image_type ENUM('front', 'back') NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (coin_id) REFERENCES coins(id) ON DELETE CASCADE,
+    UNIQUE(user_id, coin_id, image_type)
+) ENGINE = InnoDB;
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавяне на монета</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            display:flex;
+            padding: 40px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1a252f;
+        }
+        body {
+            background-color: #FFFFFF; 
+            background-image: url('./2076f4df-b05a-40d6-a0ac-fdb9f3edc526.jpg'); ;
+            background-size: 40%; 
+            background-position: center 90%; 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; 
+        }
+        .form-container {
+            width: 100%;
+            max-width: 280px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .login-container {
+            background-color:rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 50px auto; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Добавяне на нова монета</h1>
+        <nav>
+            <ul>
+                <li><a href="Coin_Collector.html">Начало</a></li>
+                <li><a href="my_collection.html">Моята колекция</a></li>
+                <li><a href="all_coins.html">Галерия</a></li>
+                <li><a href="import_coin.html">Добавяне на монета</a></li>
+                <li><a href="statistics.html">Статистики</a></li>
+                <li><a href="../php/user_logout.php">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section>
+        <h2>Попълнете данните за монетата</h2>
+        <form action="../php/import_coin.php" method="post" enctype="multipart/form-data">
+            <label>Име:</label>
+            <input type="text" name="name" required><br>
+
+            <label>Година:</label>
+            <input type="number" name="year" required><br>
+
+            <label>Стойност:</label>
+            <input type="text" name="value" required><br>
+
+            <label>Континент:</label>
+            <select name="continent" required>
+                <option value="Европа">Европа</option>
+                <option value="Азия">Азия</option>
+                <option value="Африка">Африка</option>
+                <option value="Северна Америка">Северна Америка</option>
+                <option value="Южна Америка">Южна Америка</option>
+                <option value="Австралия">Австралия</option>
+            </select><br>
+
+            <label>Име на колекция:</label>
+            <input type="text" name="collection_name" required><br>
+
+            <label>Държава:</label>
+            <input type="text" name="country" required><br>
+
+            <label>Снимка на предна част:</label>
+            <input type="file" name="front_image" accept="image/png, image/jpeg" required><br>
+
+            <label>Снимка на гръб:</label>
+            <input type="file" name="back_image" accept="image/png, image/jpeg" required><br>
+
+            <button type="submit">Запази</button>
+        
+        </form>
+        <h2>Импортиране на монети от CSV</h2>
+        <div class="form-container">
+            <form action="../php/real_import_coin.php" method="post" enctype="multipart/form-data">
+                <label for="csv_file">Изберете CSV файл:</label>
+                <input type="file" name="csv_file" id="csv_file" accept=".csv" required>
+                <button type="submit">Импортирай</button>
+            </form>
+        </div>
+  
+    </section>
+</body>
+</html>

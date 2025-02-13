@@ -1,0 +1,34 @@
+Това е финалната версия на проекта.
+
+Качваме следните файлове:
+
+create_database.txt
+
+Папка с PHP файлове: user_login_logic.php,user_registration_logic.php,user_login.php,user_registration.php,all_coins.php,my_collection.php,delete и delete_coin.php,statistics и statistics_all.php,load_coins и likes.php,import_coin,export_coin и real_import_coin.php,db.php,logout.php,2076f4df-b05a-40d6-a0ac-fdb9f3edc526.jpg
+
+Папка с HTML файлове:
+
+Coin_Collector.html,all_coins.html,my_collection.html,import_coin.html,statistics.html,2076f4df-b05a-40d6-a0ac-fdb9f3edc526.jpg  и 04a92455-1c6b-48a9-8c77-3fa8b87105f1.jpg
+
+
+Папка с Javascript файлове:
+all_coins.js, my_collection.js,staistics.js,statistics_all.js
+
+
+Папка с CSS файлове:
+login_and_registration.css
+
+
+
+
+Папка uploads- служи за съхранение на изобажения и тестване
+
+Папка csv-examples - съдържа csv файлове за тестване на импорт.
+
+Coin_Collector-документация.pdf
+Coin_Collector документация.docx
+шаблон на документация.docx
+
+82230_82178_5MI0800082_README
+
+Няма специфични забележки за стартиране на проекта, описано е как да се стартира в документацията.

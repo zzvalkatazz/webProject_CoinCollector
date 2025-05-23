@@ -4,7 +4,7 @@
         $servername="localhost:3306";
         $username = "root";
         $password = "парола_по_твой_избор";
-        $dbname = "users";
+        $dbname = "Users";
 
         $conn = null;
         try{

@@ -3,7 +3,7 @@
 //връзка с базата данни
         $servername="localhost:3306";
         $username = "root";
-        $password = "";
+        $password = "парола_по_твой_избор";
         $dbname = "users";
 
         $conn = null;
